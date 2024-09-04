@@ -1,0 +1,7 @@
+Detecting Cybersecurity Threats using Deep Learning
+Develop a system that can detect Cyber Threats in your company's network traffic logs using Deep Learning.
+
+Project Description
+Develop a system that can detect Cyber Attacks in network traffic. Utilizing PyTorch to train a neural network model and implement real-time anomaly detection. The goal is to improve network security by identifying and mitigating sophisticated cyber-attacks.
+
+
