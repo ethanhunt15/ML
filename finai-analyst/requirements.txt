@@ -1,0 +1,10 @@
+streamlit
+PyMuPDF
+openai
+google-generativeai
+python-dotenv
+chromadb
+langchain
+langchain-community
+langchain-openai
+tiktoken
