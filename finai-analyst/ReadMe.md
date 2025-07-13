@@ -27,6 +27,8 @@ finai-analyst/
 ├── .env # Environment variables (API keys)
 └── README.md # Project documentation
 
+---
+
 ## ⚙️ **Setup Instructions**
 🚀 Quick Start
 1. **Clone the repository**
@@ -52,8 +54,9 @@ streamlit run app.py
 docker build -t finai-analyst .
 docker run -p 8501:8501 --env-file .env finai-analyst
 
+---
 ChromaDB is a vector database that stores embedded representations of ingested documents and performs fast similarity searches to retrieve contextually relevant chunks for downstream LLM querying in Retrieval-Augmented Generation pipelines.
-
+---
 app.py	=> Main Streamlit application: Handles UI, user inputs, and calls backend modules (PDF parsing, RAG pipeline, insights).
 insights.py => Business Insights Module: Contains logic to derive actionable financial or operational insights from retrieved/summarised data.
 llm_client.py	=> LLM Client Wrapper: Provides reusable functions to interact with GPT or Gemini models for summarisation, embeddings, or answering.
@@ -62,7 +65,7 @@ rag_pipeline.py => RAG Pipeline Implementation: Sets up vector store (ChromaDB),
 requirements.txt => Python dependencies list: Contains all required packages to run the project (LangChain, Streamlit, ChromaDB, etc.).
 .env	=> Environment configuration file: Stores sensitive keys (OpenAI, Gemini API keys) and configurable variables used across modules.
 summariser.py	=> Summarisation Module: Uses LLM to create concise summaries from parsed document texts for faster retrieval and insights generation.
-
+---
 
 🖼️ Architecture Diagram
 📊 FinAI Analyst - RAG Pipeline Architecture
