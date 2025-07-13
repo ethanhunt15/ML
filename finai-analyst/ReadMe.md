@@ -1,13 +1,39 @@
-Automated Regulatory Compliance Summariser & Business Impact Generator for Fintech.
-✅ Upload regulatory PDF (e.g. RBI circulars)
-✅ AI summarises into structured outputs
-✅ Generates operational and business risk insights
-✅ Supports OpenAI GPT-4 or Google Gemini as backend LLM
+# 💼 FinAI Analyst
 
+A Generative AI-powered **Financial Analyst RAG pipeline** to parse PDFs, summarise content, derive business insights, and answer user queries using OpenAI or Google Gemini LLMs.
+
+---
+
+## 🚀 **Features**
+
+✅ PDF parsing and ingestion  
+✅ Summarisation using LLMs (OpenAI or Gemini)  
+✅ Vector store indexing via ChromaDB  
+✅ Retrieval-Augmented Generation (RAG) pipeline  
+✅ Business insights extraction  
+✅ Streamlit frontend for seamless interaction
+
+---
+
+## 🗂 **Project Structure**
+finai-analyst/
+├── app.py # Streamlit frontend app
+├── insights.py # Business insights module
+├── llm_client.py # Reusable LLM client functions
+├── pdf_parser.py # PDF parsing and text extraction
+├── rag_pipeline.py # RAG pipeline setup and querying
+├── summariser.py # Summarisation functions using LLM
+├── requirements.txt # Project dependencies
+├── .env # Environment variables (API keys)
+└── README.md # Project documentation
+
+## ⚙️ **Setup Instructions**
 🚀 Quick Start
-1. Clone Repository
-git clone https://github.com/yourusername/finai-analyst.git
-cd finai-analyst
+1. **Clone the repository**
+
+```bash
+git clone git@github.com:ethanhunt15/ML.git
+cd ML/finai-analyst
 
 2. Setup Environment
 python3 -m venv venv
