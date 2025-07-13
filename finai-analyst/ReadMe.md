@@ -17,57 +17,21 @@ A Generative AI-powered **Financial Analyst RAG pipeline** to parse PDFs, summar
 
 ## 🗂 **Project Structure**
 finai-analyst/
-├── app.py # Streamlit frontend app
-├── insights.py # Business insights module
-├── llm_client.py # Reusable LLM client functions
-├── pdf_parser.py # PDF parsing and text extraction
-├── rag_pipeline.py # RAG pipeline setup and querying
-├── summariser.py # Summarisation functions using LLM
-├── requirements.txt # Project dependencies
-├── .env # Environment variables (API keys)
+├── app.py # Main Streamlit application: Handles UI, user inputs, and calls backend modules (PDF parsing, RAG pipeline, insights).
+├── insights.py # Business Insights Module: Contains logic to derive actionable financial or operational insights from retrieved/summarised data.
+├── llm_client.py # LLM Client Wrapper: Provides reusable functions to interact with GPT or Gemini models for summarisation, embeddings, or answering.
+├── pdf_parser.py # PDF Parsing Module: Extracts raw text from uploaded PDFs using libraries like PyMuPDF or pdfplumber.
+├── rag_pipeline.py # RAG Pipeline Implementation: Sets up vector store (ChromaDB), embeddings, and defines functions to ingest documents and query using Retrieval-Augmented Generation.
+├── summariser.py # Summarisation Module: Uses LLM to create concise summaries from parsed document texts for faster retrieval and insights generation.
+├── requirements.txt # Python dependencies list: Contains all required packages to run the project (LangChain, Streamlit, ChromaDB, etc.).
+├── .env # Environment configuration file: Stores sensitive keys (OpenAI, Gemini API keys) and configurable variables used across modules.
 └── README.md # Project documentation
 
 ---
 
-## ⚙️ **Setup Instructions**
-🚀 Quick Start
-1. **Clone the repository**
+## 🏗 **Architecture**
 
-```bash
-git clone git@github.com:ethanhunt15/ML.git
-cd ML/finai-analyst
-
-2. Setup Environment
-python3 -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
-
-3. Configure .env
-OPENAI_API_KEY=your_openai_key_here
-GOOGLE_API_KEY=your_gemini_key_here
-LLM_PROVIDER=openai   # or gemini
-
-4. Run App
-streamlit run app.py
-
-🐳 Docker Deployment (Build and run with Docker)
-docker build -t finai-analyst .
-docker run -p 8501:8501 --env-file .env finai-analyst
-
----
-ChromaDB is a vector database that stores embedded representations of ingested documents and performs fast similarity searches to retrieve contextually relevant chunks for downstream LLM querying in Retrieval-Augmented Generation pipelines.
----
-app.py	=> Main Streamlit application: Handles UI, user inputs, and calls backend modules (PDF parsing, RAG pipeline, insights).
-insights.py => Business Insights Module: Contains logic to derive actionable financial or operational insights from retrieved/summarised data.
-llm_client.py	=> LLM Client Wrapper: Provides reusable functions to interact with GPT or Gemini models for summarisation, embeddings, or answering.
-pdf_parser.py	=> PDF Parsing Module: Extracts raw text from uploaded PDFs using libraries like PyMuPDF or pdfplumber.
-rag_pipeline.py => RAG Pipeline Implementation: Sets up vector store (ChromaDB), embeddings, and defines functions to ingest documents and query using Retrieval-Augmented Generation.
-requirements.txt => Python dependencies list: Contains all required packages to run the project (LangChain, Streamlit, ChromaDB, etc.).
-.env	=> Environment configuration file: Stores sensitive keys (OpenAI, Gemini API keys) and configurable variables used across modules.
-summariser.py	=> Summarisation Module: Uses LLM to create concise summaries from parsed document texts for faster retrieval and insights generation.
----
-
-🖼️ Architecture Diagram
+```
 📊 FinAI Analyst - RAG Pipeline Architecture
 ────────────────────────────────────────────────────
 
@@ -148,4 +112,98 @@ summariser.py	=> Summarisation Module: Uses LLM to create concise summaries from
  │   Business Insights         │
  └─────────────────────────────┘
 
-────────────────────────────────────────────────────
+```
+
+---
+
+## ⚙️ **Setup Instructions**
+
+1. **Clone the repository**
+
+```bash
+git clone git@github.com:ethanhunt15/ML.git
+cd ML/finai-analyst
+```
+
+2. **Create virtual environment**
+
+```bash
+python3 -m venv venv
+source venv/bin/activate
+```
+
+3. **Install dependencies**
+
+```bash
+pip install -r requirements.txt
+```
+
+4. **Add environment variables**
+
+Create a `.env` file with:
+
+```
+OPENAI_API_KEY=your_openai_key
+GOOGLE_API_KEY=your_google_key
+```
+
+5. **Run the app**
+
+```bash
+streamlit run app.py
+```
+
+---
+
+## 🔑 **Environment Variables**
+
+| Variable         | Description                |
+| ---------------- | -------------------------- |
+| OPENAI\_API\_KEY | Your OpenAI API key        |
+| GOOGLE\_API\_KEY | Your Google Gemini API key |
+
+---
+
+## 📌 **Requirements**
+
+- Python 3.9+
+- OpenAI / Gemini API keys
+- Streamlit
+- LangChain
+- ChromaDB
+
+---
+
+## ✨ **Future Enhancements**
+
+- Multi-LLM orchestration for cost-performance optimisation
+- Fine-tuned business insights module for domain-specific KPIs
+- RAG pipeline performance benchmarking
+- Deployment on cloud (AWS Lambda / GCP Cloud Run)
+
+---
+
+## 📝 **License**
+
+MIT License.
+
+---
+
+## 🙌 **Acknowledgements**
+
+Built as a FinTech Generative AI showcase integrating **LangChain, ChromaDB, OpenAI, and Gemini** for robust document understanding and insights generation.
+
+---
+
+```
+
+---
+
+### ✅ **Usage**
+
+Download or copy this to your `README.md` file directly. Let me know if you want:
+
+- A **Mermaid diagram version** for GitHub rendering  
+- Badges, project thumbnail, and contribution guidelines for your final portfolio publish this week.
+
+```
