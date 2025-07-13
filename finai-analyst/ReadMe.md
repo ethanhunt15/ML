@@ -200,11 +200,3 @@ Built as a FinTech Generative AI showcase integrating **LangChain, ChromaDB, Ope
 
 ---
 
-### ✅ **Usage**
-
-Download or copy this to your `README.md` file directly. Let me know if you want:
-
-- A **Mermaid diagram version** for GitHub rendering  
-- Badges, project thumbnail, and contribution guidelines for your final portfolio publish this week.
-
-```
