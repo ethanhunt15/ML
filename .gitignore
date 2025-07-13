@@ -1,0 +1,14 @@
+# macOS system files
+.DS_Store
+
+# Environment variables
+.env
+
+# Python cache files
+__pycache__/
+
+# ChromaDB local store
+chromadb_store/
+
+# Python virtual environment
+venv/
