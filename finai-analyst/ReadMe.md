@@ -16,6 +16,7 @@ A Generative AI-powered **Financial Analyst RAG pipeline** to parse PDFs, summar
 ---
 
 ## 🗂 **Project Structure**
+```
 finai-analyst/
 ├── app.py # Main Streamlit application: Handles UI, user inputs, and calls backend modules (PDF parsing, RAG pipeline, insights).
 ├── insights.py # Business Insights Module: Contains logic to derive actionable financial or operational insights from retrieved/summarised data.
@@ -26,7 +27,7 @@ finai-analyst/
 ├── requirements.txt # Python dependencies list: Contains all required packages to run the project (LangChain, Streamlit, ChromaDB, etc.).
 ├── .env # Environment configuration file: Stores sensitive keys (OpenAI, Gemini API keys) and configurable variables used across modules.
 └── README.md # Project documentation
-
+```
 ---
 
 ## 🏗 **Architecture**
