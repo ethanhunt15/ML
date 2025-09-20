@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+scikit-learn
+joblib
+transformers>=4.30
+datasets>=2.0
+evaluate
+accelerate
+torch

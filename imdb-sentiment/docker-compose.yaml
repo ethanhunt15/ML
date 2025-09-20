@@ -1,0 +1,25 @@
+version: "3.9"
+
+services:
+  fastapi:
+    build:
+      context: .                 # build context = repo root
+      dockerfile: src/serving/Dockerfile
+    container_name: fastapi-service
+    ports:
+      - "8080:8080"              # host:container
+    restart: unless-stopped
+
+  springboot:
+    build:
+      context: backend           # Spring Boot Gradle project folder
+      dockerfile: Dockerfile     # create a Dockerfile in backend/ (see below)
+    container_name: springboot-service
+    ports:
+      - "8081:8081"
+    depends_on:
+      - fastapi                  # ensures FastAPI starts first
+    environment:
+      # So Spring Boot knows where FastAPI is:
+      FASTAPI_URL: http://fastapi:8080
+    restart: unless-stopped

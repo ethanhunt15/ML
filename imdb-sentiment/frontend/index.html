@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IMDB Sentiment Analysis</title>
+</head>
+<body>
+    <h1>IMDB Sentiment Analysis</h1>
+    <textarea id="review" rows="4" cols="50" placeholder="Type your review here..."></textarea><br><br>
+    <button onclick="submitReview()">Submit</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        async function submitReview() {
+    const text = document.getElementById("review").value;
+    try {
+        const response = await fetch('http://localhost:8081/api/predict', {
+            method: 'POST',
+            headers: {'Content-Type': 'application/json'},
+            body: JSON.stringify({text})
+        });
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+        document.getElementById("result").innerText =
+            `Label: ${data.label === 1 ? "Positive" : "Negative"} | Probability: ${data.probability.toFixed(2)}`;
+    } catch (err) {
+        console.error("Error:", err);
+        document.getElementById("result").innerText = "Error: Check console";
+    }
+}
+    </script>
+</body>
+</html>

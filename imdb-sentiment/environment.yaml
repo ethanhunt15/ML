@@ -1,0 +1,18 @@
+name: imdb-ml
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+  - pip:
+    - scikit-learn
+    - pandas
+    - numpy
+    - joblib
+    - fastapi
+    - uvicorn[standard]
+    - transformers
+    - datasets
+    - torch
+    - huggingface-hub
+    - aiohttp
